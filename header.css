@@ -198,6 +198,11 @@ footer div a{
       border-right-width: 15px;
     }
   }
+ #profile1 {
+    top:50%;
+    width: 40%;
+    height: 35%;
+  }
   @media (min-width: 768px ) {
     #profile1 {
       top:26%;
