@@ -247,11 +247,11 @@ footer div a{
     }
 }
 @media (min-width: 768px) {
-  #typ {
+  #typ.col-md-2 {
       flex: 0 0 auto;
       width: 46.666667%;
   }
-  #typp {
+  #typp.col-md-2 {
       flex: 0 0 auto;
       width: 46.666667%;
   }
