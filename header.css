@@ -72,6 +72,8 @@ nav li:first-child{
 
 .sidebar a{
     width: 100%;
+    color: black;
+    background-color: white;
 }
 
 #menu{
