@@ -56,22 +56,22 @@ include("header.php");
 
 
     <title>home</title>
-    <link  href="index.css" rel = "stylesheet" >
+    <link  href="index.css?v=2" rel = "stylesheet" >
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="header.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
-<body style=" background-color:rgb(3, 3, 3);">
+<body style="background-color: var(--primary-bg); color: var(--text-primary);">
     <!-- for navbar -->
     <header>
         <nav>
             <ul id = "mainbar">
-                <li><a href = "index.html"><img src="images/logo.jpg">ARJAN</a></li>   
+                <li><a href = "index.html"><img src="images/logo.jpg" alt="Logo">ARJAN</a></li>   
                 <li id = "hide"><a href = "index.html" >Home</a></li>    
                 <li id = "hide"><a href = "about_me.html" >About Me</a></li> 
-                <li id = "hide"><a href = "exprence.html" >exprence</a></li> 
+                <li id = "hide"><a href = "exprence.html" >Experience</a></li> 
                 <li id = "hide"><a href = "contact.html" >Contact</a></li> 
                 <li id = "menu" onclick = "showSidebar()"><a href = "#"><i class = "fa fa-bars" style="font-size: 20px;"></i></a></li>
             </ul>
@@ -81,7 +81,7 @@ include("header.php");
                 <li><a href = "index.html" >Home</a></li>    
                 <li><a href = "about_me.html" >About me</a></li>   
                 <li ><a href = "contact.html" >Contact</a></li> 
-                <li ><a href = "resume.html" >Resume</a></li> 
+                <li ><a href = "exprence.html" >Experience</a></li> 
 
              
                 
@@ -91,7 +91,7 @@ include("header.php");
 
 
 <main >
-    <div class="container-fluid  px-5 " style="color: aliceblue;">
+    <div class="container-fluid  px-5 " style="color: var(--text-primary);">
         <div class="row">
             <div id="typ" class="col-md-2"  >
                 <div class="">
@@ -116,8 +116,183 @@ include("header.php");
             </div>
         </div>
     </div>
+      <!--project column-->
+      <div class="col-12">
+        <h5 class="text-uppercase mb-3">Featured Projects</h5>
+        
+        <!-- Projects Slider Container -->
+        <div class="projects-container">
+          <div class="projects-slider" id="projectsSlider">
+
+             <!-- Project 1: Weather Dashboard -->
+            <div class="project-card" onclick="redirectToProject('https://vistaframingandart.com/shop/')">
+              <div class="project-image">
+                <img src="images/vistafarming.png" alt="vista farming shop page" class="project-photo">
+                <div class="project-overlay">
+                  <i class="fas fa-shopping-cart project-icon"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h6 class="project-title">Vista Farming Shop</h6>
+                <p class="project-description">A real-time farm shop website with responsive design for all devices.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">PHP</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://vistaframingandart.com/shop/" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+              <!-- Project 2: Portfolio Website -->
+            <div class="project-card" onclick="redirectToProject('index.html')">
+              <div class="project-image">
+                <img src="images/portfolio.jpg" alt="Portfolio Website" class="project-photo">
+                <div class="project-overlay">
+                  <i class="fas fa-user-circle project-icon"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h6 class="project-title">Portfolio Website</h6>
+                <p class="project-description">A modern, responsive portfolio website showcasing professional skills, experience, and projects with interactive design elements, smooth animations, and mobile-first approach.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Bootstrap</span>
+                </div>
+                <div class="project-links">
+                  <a href="index.html" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> view project
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Project 3: Car Rental System -->
+            <div class="project-card" onclick="redirectToProject('#')">
+              <div class="project-image">
+                <img src="images/car-rental.jpg" alt="Car Rental System" class="project-photo">
+                <div class="project-overlay">
+                  <i class="fas fa-car project-icon"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h6 class="project-title">Car Rental System</h6>
+                <p class="project-description">A comprehensive full-stack web application for car rental management featuring user authentication, booking system, payment processing, and admin dashboard with real-time updates.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">PHP</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">Bootstrap</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> working on deploying this project live
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: Kinn Baach Marketplace -->
+            <div class="project-card" onclick="redirectToProject(' #')">
+              <div class="project-image">
+                <img src="images/marketplace.jpg" alt="Kinn Baach Marketplace" class="project-photo">
+                <div class="project-overlay">
+                  <i class="fas fa-store project-icon"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h6 class="project-title">Kinn Baach Marketplace</h6>
+                <p class="project-description">An innovative online marketplace platform with advanced features including product listings, user profiles, real-time messaging system, order management, and secure payment integration.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">PHP</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">AJAX</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> working on deploying this project live
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          
+
+            <!-- Project 5: E-commerce Platform -->
+            <div class="project-card" onclick="redirectToProject('#')">
+              <div class="project-image">
+                <img src="images/ecommerce.jpg" alt="E-commerce Platform" class="project-photo">
+                <div class="project-overlay">
+                  <i class="fas fa-shopping-cart project-icon"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h6 class="project-title">E-commerce Platform</h6>
+                <p class="project-description">A complete e-commerce solution featuring shopping cart functionality, secure payment integration, inventory management, order tracking, and customer dashboard with modern UI/UX design.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">MongoDB</span>
+                  <span class="tech-tag">Stripe API</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> working on deploying this project live
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 6: Task Management App -->
+            <div class="project-card" onclick="redirectToProject('#')">
+              <div class="project-image">
+                <img src="images/taskmanager.jpg" alt="Task Management App" class="project-photo">
+                <div class="project-overlay">
+                  <i class="fas fa-tasks project-icon"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h6 class="project-title">Task Management App</h6>
+                <p class="project-description">A collaborative task management application with real-time updates, team collaboration features, project tracking, deadline management, and intuitive drag-and-drop interface.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Vue.js</span>
+                  <span class="tech-tag">Express</span>
+                  <span class="tech-tag">Socket.io</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> working on deploying this project live
+                  </a>
+                </div>
+              </div>
+            </div>
+
+           
+
+          </div>
+          
+          <!-- Navigation Arrows -->
+          <button class="slider-btn prev-btn" onclick="slideProjects('prev')">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slider-btn next-btn" onclick="slideProjects('next')">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          
+          <!-- Dots Indicator -->
+          <div class="slider-dots" id="sliderDots"></div>
+        </div>
+      </div>
 </main>
-<footer class="bg-body-tertiary text-center text-lg-start position-relative fixed-bottom " style="color:white;">
+<footer class="bg-body-tertiary text-center text-lg-start position-relative fixed-bottom " style="color: var(--text-primary); background-color: var(--secondary-bg); border-top: 1px solid var(--border-color);">
   <!-- Grid container -->
   <div class="container p-4">
     <!--Grid row-->
@@ -130,12 +305,12 @@ include("header.php");
           <li>
                    <div class="d-flex mb-1 pt-1 pb-1" style="background-size: 100%; background-repeat: no-repeat;">
                         <i class=" fa fa-map-marker fa-lg ms-1 me-2 mt-2" style="color: green; background-color: white; height: 18px;"></i>
-                        <span class="text-wrap ms-2" style="color:white;">Budhiganga-1,puspalalchowk,Biratnagar</span>
+                        <span class="text-wrap ms-2" style="color: var(--text-primary);">Budhiganga-1,puspalalchowk,Biratnagar</span>
                     </div>
           </li>
           <li>
-                   <div class="d-flex mb-1 pt-1 pb-1" style="background-size: 100%; background-repeat: no-repeat;" style="color:white;">
-                        <span><i class="id-color fa fa-phone fa-lg  mx-1" style="color:white;"></i>
+                   <div class="d-flex mb-1 pt-1 pb-1" style="background-size: 100%; background-repeat: no-repeat; color:white;">
+                        <span><i class="id-color fa fa-phone fa-lg  mx-1" style="color: var(--accent-blue);"></i>
                         <a href="tel:9817340169" >9817340169</a> / <a href="tel:9749236498">9749236498</a>
                         </span>
                     </div>
@@ -143,7 +318,7 @@ include("header.php");
           <li>
                    <div class="d-flex mb-1 pt-1 pb-1" style="background-size: 100%; background-repeat: no-repeat;">
                         <span>
-                            <i class="id-color fab fa-google fa-lg mx-1" style="color:white;"></i>
+                            <i class="id-color fab fa-google fa-lg mx-1" style="color: var(--accent-green);"></i>
                             <a href="mailto:arjan.khatiwada425@gmail.com">arjan.khatiwada425@gmail.com</a>
                         </span>
                     </div>
@@ -151,7 +326,7 @@ include("header.php");
          
         </ul>
       </div>
-      <!--Grid column-->
+    
 
       <!--Grid column-->
       <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
@@ -162,6 +337,7 @@ include("header.php");
             <div class="social-icons" style="background-size: 100%; background-repeat: no-repeat;">
                         <i class="fab fa-facebook fa-lg p-2" style="cursor: pointer;color: #3b5998;" onclick="confirmAction('leave this page', 'https://www.facebook.com/arjan.khatiwada.1')"></i>
                         <i class="fab fa-instagram fa-lg p-2" style="cursor: pointer;color: #ac2bac;" onclick="confirmAction('leave this page', 'https://www.instagram.com/arjan.khatiwada.1/')"></i>
+                        <i class="fab fa-linkedin fa-lg p-2" style="cursor: pointer;color: #0077b5;" onclick="confirmAction('leave this page', 'https://www.linkedin.com/in/arjan-khatiwada-24618131b/')"></i>
                 </div>
           </li>
         </ul>
@@ -174,7 +350,7 @@ include("header.php");
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2020 Copyright:
+    &copy; 2020 Copyright:
     <a class="text-white " href="#">Arjan Khatiwada</a>
   </div>
   <!-- Copyright -->
@@ -200,7 +376,134 @@ include("header.php");
               return false;
           }
       }
-  
+
+      // Projects Slider Functionality
+      let currentSlide = 0;
+      let totalSlides = 0;
+      let slidesPerView = 3; // Default number of slides to show
+      let sliderContainer, sliderTrack, slides, dotsContainer, prevBtn, nextBtn;
+      
+      function initSlider() {
+          sliderContainer = document.querySelector('.projects-container');
+          sliderTrack = document.getElementById('projectsSlider');
+          slides = document.querySelectorAll('.project-card');
+          totalSlides = slides.length;
+          dotsContainer = document.querySelector('.slider-dots');
+          prevBtn = document.querySelector('.prev-btn');
+          nextBtn = document.querySelector('.next-btn');
+          
+          // Calculate how many slides can fit in the viewport
+          updateSlidesPerView();
+          
+          // Set initial slide positions
+          updateSlider();
+          
+          // Add event listeners
+          window.addEventListener('resize', handleResize);
+          if (prevBtn) prevBtn.addEventListener('click', () => slideProjects('prev'));
+          if (nextBtn) nextBtn.addEventListener('click', () => slideProjects('next'));
+      }
+      
+      function updateSlidesPerView() {
+          // Reset to default
+          slidesPerView = 3;
+          
+          // Adjust based on screen size
+          if (window.innerWidth < 1200) {
+              slidesPerView = 2;
+          }
+          if (window.innerWidth < 768) {
+              slidesPerView = 1;
+          }
+          
+          // Update slider track width
+          const slideWidth = 100 / slidesPerView;
+          document.documentElement.style.setProperty('--slide-width', `${slideWidth}%`);
+          
+          // Update slider track
+          sliderTrack.style.transform = `translateX(-${currentSlide * (100 / slidesPerView)}%)`;
+          
+          // Show/hide navigation arrows based on number of slides
+          if (prevBtn && nextBtn) {
+              if (totalSlides <= slidesPerView) {
+                  prevBtn.style.display = 'none';
+                  nextBtn.style.display = 'none';
+              } else {
+                  prevBtn.style.display = 'flex';
+                  nextBtn.style.display = 'flex';
+              }
+          }
+          
+          // Update dots if they exist
+          updateDots();
+      }
+      
+      function handleResize() {
+          updateSlidesPerView();
+      }
+      
+      function slideProjects(direction) {
+          if (direction === 'prev') {
+              currentSlide = Math.max(0, currentSlide - 1);
+          } else {
+              const maxSlide = Math.ceil(totalSlides / slidesPerView) - 1;
+              currentSlide = Math.min(maxSlide, currentSlide + 1);
+          }
+          updateSlider();
+      }
+      
+      function updateSlider() {
+          const slideWidth = 100 / slidesPerView;
+          sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+          
+          // Update active dot
+          updateDots();
+          
+          // Update button states
+          if (prevBtn && nextBtn) {
+              prevBtn.disabled = currentSlide === 0;
+              nextBtn.disabled = currentSlide >= Math.ceil(totalSlides / slidesPerView) - 1;
+          }
+      }
+      
+      function updateDots() {
+          if (!dotsContainer) return;
+          
+          const dots = Array.from(dotsContainer.children);
+          dots.forEach((dot, index) => {
+              dot.classList.toggle('active', index === currentSlide);
+          });
+      }
+      
+      // Initialize slider when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+          initSlider();
+          
+          // Create dots if they don't exist
+          if (!document.querySelector('.slider-dots')) {
+              createDots();
+          }
+      });
+      
+      function createDots() {
+          if (totalSlides <= slidesPerView) return;
+          
+          const dotsContainer = document.createElement('div');
+          dotsContainer.className = 'slider-dots';
+          
+          const dotCount = Math.ceil(totalSlides / slidesPerView);
+          for (let i = 0; i < dotCount; i++) {
+              const dot = document.createElement('div');
+              dot.className = `dot ${i === 0 ? 'active' : ''}`;
+              dot.addEventListener('click', () => {
+                  currentSlide = i;
+                  updateSlider();
+              });
+              dotsContainer.appendChild(dot);
+          }
+          
+          document.querySelector('.projects-container').appendChild(dotsContainer);
+      }
   
       </script>
   
@@ -216,5 +519,3 @@ include("header.php");
 <?php
     include('footer.php');
  ?> -->
-
-
