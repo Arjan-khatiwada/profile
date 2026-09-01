@@ -38,8 +38,7 @@ npm run preview # serve the production build locally
 5. Cloudflare will auto-deploy on every push to `main`. No GitHub Actions workflow is needed —
    remove `.github/workflows/jekyll-gh-pages.yml` from the old repo since it built a Jekyll site,
    which no longer applies here.
-6. `public/_redirects` already contains the SPA fallback rule
-   (`/* /index.html 200`) so client-side routes like `/about` work on direct load/refresh.
+6. Cloudflare Pages handles SPA fallback natively via `public/200.html` and Wrangler asset configuration so client-side routes like `/about` work on direct load/refresh without triggering redirect loop errors.
 
 ### DNS
 
@@ -74,6 +73,6 @@ src/
 public/
   images/       All original images
   CNAME         Custom domain for Cloudflare/GitHub Pages
-  _redirects    Cloudflare Pages SPA fallback rule
+  200.html       Cloudflare Pages SPA fallback file
   robots.txt, sitemap.xml
 ```
