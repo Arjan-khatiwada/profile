@@ -1,0 +1,148 @@
+/*
+  DESIGN TOKENS
+  =============
+  These are CSS *custom properties* (the -- prefix is what makes them a
+  variable rather than a normal CSS property). We define them once, on
+  :root (the <html> element, the top of the whole document), and every
+  other stylesheet in this app reads them with var(--name). Change a
+  color here and it updates everywhere it's used, instead of hunting
+  through every file for a hex code.
+*/
+:root {
+  /* Surfaces */
+  --primary-bg: #0a0e13;      /* page background — a near-black graphite, not pure navy or pure black */
+  --secondary-bg: #10151c;    /* slightly lighter panel, used behind nav/footer */
+  --accent-color: #171f28;    /* a third, lighter-still surface for hover states */
+  --card-bg: rgba(16, 21, 28, 0.72); /* translucent card background (the alpha lets backdrop-filter blur show through) */
+
+  /* Text */
+  --text-primary: #edf1e8;    /* soft paper-white, easier on the eyes than pure #fff */
+  --text-secondary: #8996a1;  /* muted slate for captions/labels */
+
+  /* Accents — each one has a job, not just a color */
+  --accent-blue: #38bdf8;     /* "wire" blue — links, tech tags, structural lines */
+  --accent-purple: #8b7cf6;   /* violet — pairs with blue in gradients */
+  --accent-green: #34d399;    /* emerald — the "status: online" signal color, primary CTA */
+  --accent-orange: #f2a641;   /* amber — secondary accent / warm highlight */
+
+  --hover-bg: rgba(56, 189, 248, 0.10);
+  --border-color: rgba(56, 189, 248, 0.18);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif; /* headings — geometric, technical */
+  --font-body: 'Inter', 'Segoe UI', sans-serif;             /* paragraphs, UI copy */
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;  /* labels, stats, nav eyebrow, code-like text */
+
+  /* Shape */
+  --radius-lg: 18px;
+  --radius-md: 12px;
+}
+
+/*
+  Universal reset. We zero out the default margin/padding every browser
+  ships with its own opinion about (headings, lists, paragraphs all
+  differ slightly between browsers), and box-sizing: border-box makes
+  width/height calculations include padding+border instead of adding on
+  top of them — this is the industry-standard reset so element sizing
+  behaves predictably.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/*
+  Headings default to the display face. Because this rule targets
+  h1–h6 directly (not the universal * selector), it will always win
+  over the body's font-family without needing !important — a more
+  specific/targeted selector beats a broader one applied earlier.
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+}
+
+/* Utility: small monospace "eyebrow" label used above headings */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+  margin-bottom: 12px;
+}
+
+/* Utility: rounded tag/chip used for roles, tech stacks, etc. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--accent-blue);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+/* The pulsing "online" dot used in the header status bar */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  display: inline-block;
+  flex-shrink: 0;
+  animation: pulse-dot 2.2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); }
+  70% { box-shadow: 0 0 0 7px rgba(52, 211, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+
+/*
+  Accessibility: respect the OS-level "reduce motion" setting. Some
+  people get motion sickness or find animation distracting, so when
+  they've asked their system for reduced motion, we turn our pulse
+  animation off entirely rather than ignoring their preference.
+*/
+@media (prefers-reduced-motion: reduce) {
+  .status-dot {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Accessibility: a visible focus ring for keyboard users tabbing through the page */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+}
