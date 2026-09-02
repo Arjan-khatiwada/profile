@@ -64,7 +64,12 @@ export default function ProjectsSlider() {
               style={{ cursor: project.link ? 'pointer' : 'default' }}
             >
               <div className="project-image">
-                <img src={project.image} alt={project.title} className="project-photo" />
+                <img
+                  src={project.image}
+                  alt={`Screenshot of ${project.title}`}
+                  className="project-photo"
+                  loading="lazy"
+                />
                 <div className="project-overlay">
                   <i className={`${project.icon} project-icon`}></i>
                 </div>

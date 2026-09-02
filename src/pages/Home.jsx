@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
-// Real, quantifiable results pulled from Arjan's CV — the hero leads
-// with these instead of a generic "big number + gradient" template,
-// because in this case the content genuinely earns that treatment.
 const STATS = [
   { value: '99.9%', label: 'Uptime shipped' },
   { value: '40%', label: 'Faster API response' },
@@ -13,12 +10,29 @@ const STATS = [
 
 const ROLES = ['React', 'Node.js', 'Laravel', 'Python', 'AWS / GCP'];
 
+const HOME_PERSON_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Arjan Khatiwada',
+  url: 'https://www.arjankhatiwada.com.np',
+  image: 'https://www.arjankhatiwada.com.np/images/arj.jpg',
+  jobTitle: 'Full Stack Developer',
+  sameAs: [
+    'https://github.com/arjankhatiwada',
+    'https://linkedin.com/in/arjan-khatiwada-24618131b/',
+    'https://www.facebook.com/arjan.khatiwada.1',
+    'https://www.instagram.com/arjan.khatiwada.1/',
+  ],
+};
+
 export default function Home() {
   return (
     <>
       <SEO
         title="Full Stack Developer Portfolio"
-        description="Portfolio of Arjan Khatiwada, a full stack developer specializing in React, Node.js, and modern web applications. Explore projects, skills, and contact details."
+        description="Portfolio of Arjan Khatiwada, a full stack developer specializing in React, Node.js, Express, and modern web applications. Explore projects, work experience, and contact details."
+        image="https://www.arjankhatiwada.com.np/images/arj.jpg"
+        jsonLd={HOME_PERSON_SCHEMA}
       />
       <div className="container-fluid px-4 px-md-5">
         <div className="hero">
@@ -49,7 +63,7 @@ export default function Home() {
               ))}
             </div>
             <div className="cta-row">
-              <Link to="/work" className="btn-solid">
+              <Link to="/experience" className="btn-solid">
                 View work experience
               </Link>
               <Link to="/contact" className="btn-outline">
@@ -58,7 +72,12 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-portrait">
-            <img src="/images/arj.jpg" alt="Arjan Khatiwada" />
+            <img
+              src="/images/arj.jpg"
+              alt="Arjan Khatiwada - Full Stack Developer portrait"
+              loading="eager"
+              fetchPriority="high"
+            />
           </div>
         </div>
 
@@ -74,3 +93,4 @@ export default function Home() {
     </>
   );
 }
+

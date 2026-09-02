@@ -6,8 +6,8 @@ export default function Education() {
   return (
     <>
       <SEO
-        title="Education"
-        description="Arjan Khatiwada's academic background and education system."
+        title="Education & Academic Background"
+        description="Academic background and educational degree history of Arjan Khatiwada, Bachelor of Computer Applications (BCA) candidate."
       />
       <div className="container">
         <div className="container pt-5 px-3 px-md-5">
@@ -16,8 +16,7 @@ export default function Education() {
               <div className="card-body p-4">
                 <div className="row">
                   <div className="col-lg-12 text-center">
-                    
-                    <h2 className="section-heading">ACADEMIC BACKGROUND</h2>
+                    <h1 className="section-heading">ACADEMIC BACKGROUND</h1>
                   </div>
                 </div>
                 <div className="record-list">
@@ -33,3 +32,4 @@ export default function Education() {
     </>
   );
 }
+

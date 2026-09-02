@@ -18,7 +18,7 @@ function SkillColumn({ title, skills }) {
   return (
     <div className="about-skills-col">
       <div className="about-section-header">
-        <span className="about-section-label">{title}</span>
+        <h2 className="about-section-label">{title}</h2>
         <span className="about-section-rule" aria-hidden="true"></span>
       </div>
       <div className="about-skills-list">
@@ -43,7 +43,8 @@ export default function AboutMe() {
     <>
       <SEO
         title="About Me"
-        description="Learn more about Arjan Khatiwada — background, skills, and languages."
+        description="Learn more about Arjan Khatiwada — full stack developer & prompt engineer from Biratnagar, Nepal. Technical competencies, background, and skills."
+        image="https://www.arjankhatiwada.com.np/images/a.jpg"
       />
       <div className="container about-page">
         <div className="about-page-inner pt-5 px-3 px-md-5">
@@ -52,11 +53,14 @@ export default function AboutMe() {
           <div className="about-top-row">
             <aside className="about-card about-profile-card">
               <div className="about-photo-frame">
-                
-                <img src="/images/a.jpg" alt="Arjan Khatiwada" />
+                <img
+                  src="/images/a.jpg"
+                  alt="Arjan Khatiwada portrait"
+                  loading="lazy"
+                />
               </div>
               <div className="about-profile-body">
-                <h2 className="about-profile-name">ARJAN KHATIWADA</h2>
+                <h1 className="about-profile-name">ARJAN KHATIWADA</h1>
                 <div className="about-profile-meta-row">
                   <span className="about-meta-item">
                     <i className="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -70,7 +74,7 @@ export default function AboutMe() {
 
             <section className="about-card about-core-card">
               <div className="about-section-header">
-                <span className="about-section-label">PERSONAL Information</span>
+                <h2 className="about-section-label">PERSONAL Information</h2>
                 <span className="about-section-rule" aria-hidden="true"></span>
               </div>
 
@@ -94,7 +98,7 @@ export default function AboutMe() {
 
                 <div className="about-social-section">
                   <div className="about-section-header">
-                    <span className="about-section-label">SOCIAL NETWORK</span>
+                    <h3 className="about-section-label">SOCIAL NETWORK</h3>
                     <span className="about-section-rule" aria-hidden="true"></span>
                   </div>
                   <div className="about-social-icons social-icons">
@@ -103,7 +107,7 @@ export default function AboutMe() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="about-social-link about-social-facebook"
-                      aria-label="Facebook"
+                      aria-label="Facebook Profile"
                     >
                       <i className="fab fa-facebook" aria-hidden="true"></i>
                     </a>
@@ -112,7 +116,7 @@ export default function AboutMe() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="about-social-link about-social-instagram"
-                      aria-label="Instagram"
+                      aria-label="Instagram Profile"
                     >
                       <i className="fab fa-instagram" aria-hidden="true"></i>
                     </a>
@@ -121,7 +125,7 @@ export default function AboutMe() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="about-social-link about-social-linkedin"
-                      aria-label="LinkedIn"
+                      aria-label="LinkedIn Profile"
                     >
                       <i className="fab fa-linkedin" aria-hidden="true"></i>
                     </a>
@@ -155,7 +159,7 @@ export default function AboutMe() {
 
           <section className="about-card about-languages-card">
             <div className="about-section-header">
-              <span className="about-section-label">LANGUAGES</span>
+              <h2 className="about-section-label">LANGUAGES</h2>
               <span className="about-section-rule" aria-hidden="true"></span>
             </div>
             <div className="about-language-row">

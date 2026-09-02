@@ -3,25 +3,37 @@
 
   <url>
     <loc>https://www.arjankhatiwada.com.np/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.arjankhatiwada.com.np/about</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.arjankhatiwada.com.np/experience</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.arjankhatiwada.com.np/education</loc>
+    <lastmod>2026-09-02</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
+    <loc>https://www.arjankhatiwada.com.np/projects</loc>
+    <lastmod>2026-09-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.arjankhatiwada.com.np/contact</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <priority>0.7</priority>
   </url>
 

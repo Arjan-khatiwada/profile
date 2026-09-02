@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About Me' },
-  { to: '/work', label: 'Work' },
+  { to: '/experience', label: 'Experience' },
   { to: '/education', label: 'Education' },
   { to: '/projects', label: 'Projects' },
   { to: '/contact', label: 'Contact' },
@@ -15,11 +15,11 @@ export default function Header() {
 
   return (
     <header>
-      <nav>
+      <nav aria-label="Main Navigation">
         <ul id="mainbar">
           <li>
             <NavLink to="/" onClick={() => setSidebarOpen(false)}>
-              <img src="/images/logo.jpg" alt="Logo" />
+              <img src="/images/logo.jpg" alt="Arjan Khatiwada Logo" />
               ARJAN
             </NavLink>
           </li>
@@ -30,10 +30,15 @@ export default function Header() {
               </NavLink>
             </li>
           ))}
-          <li id="menu" onClick={() => setSidebarOpen(true)}>
-            <a href="#!" onClick={(e) => e.preventDefault()}>
-              <i className="fa fa-bars" style={{ fontSize: 20 }}></i>
-            </a>
+          <li id="menu">
+            <button
+              type="button"
+              className="bg-transparent border-0 text-light p-0 cursor-pointer"
+              onClick={() => setSidebarOpen(true)}
+              aria-label="Open navigation menu"
+            >
+              <i className="fa fa-bars" style={{ fontSize: 20 }} aria-hidden="true"></i>
+            </button>
           </li>
         </ul>
 
@@ -43,7 +48,7 @@ export default function Header() {
               type="button"
               className="sidebar-close-btn"
               onClick={() => setSidebarOpen(false)}
-              aria-label="Close menu"
+              aria-label="Close navigation menu"
             >
               <i className="fas fa-times" aria-hidden="true"></i>
             </button>
@@ -69,3 +74,4 @@ export default function Header() {
     </header>
   );
 }
+

@@ -34,19 +34,24 @@ function ProjectLink({ project }) {
 
 function ProjectCard({ project, onProjectClick }) {
   return (
-    <div
+    <article
       className="project-card"
       onClick={() => onProjectClick(project)}
       style={{ cursor: project.link ? 'pointer' : 'default' }}
     >
       <div className="project-image">
-        <img src={project.image} alt={project.title} className="project-photo" />
+        <img
+          src={project.image}
+          alt={`Screenshot of ${project.title}`}
+          className="project-photo"
+          loading="lazy"
+        />
         <div className="project-overlay">
           <i className={`${project.icon} project-icon`}></i>
         </div>
       </div>
       <div className="project-content">
-        <h6 className="project-title">{project.title}</h6>
+        <h3 className="project-title">{project.title}</h3>
         <p className="project-description">{project.description}</p>
         <div className="project-tech">
           {project.tech.map((t) => (
@@ -59,7 +64,7 @@ function ProjectCard({ project, onProjectClick }) {
           <ProjectLink project={project} />
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -80,8 +85,8 @@ export default function Projects() {
   return (
     <>
       <SEO
-        title="Projects"
-        description="A showcase of Arjan Khatiwada's system deployments and development projects."
+        title="Projects & System Deployments"
+        description="A showcase of Arjan Khatiwada's full stack software deployments, AI-powered platforms, marketplaces, and web applications."
       />
       <div className="container pt-5 px-3 px-md-5">
         <div className="row justify-content-center">
@@ -89,12 +94,12 @@ export default function Projects() {
             <div className="eyebrow" style={{ justifyContent: 'center' }}>
               REPOSITORY STATUS: ACTIVE
             </div>
-            <h2 className="section-heading">System Deployments</h2>
+            <h1 className="section-heading">System Deployments</h1>
           </div>
         </div>
 
         {featuredProject ? (
-          <div
+          <article
             className="featured-project"
             onClick={() => handleProjectClick(featuredProject)}
             style={{ cursor: featuredProject.link ? 'pointer' : 'default' }}
@@ -103,15 +108,16 @@ export default function Projects() {
             <div className="featured-project-image">
               <img
                 src={featuredProject.image}
-                alt={featuredProject.title}
+                alt={`Screenshot of ${featuredProject.title}`}
                 className="project-photo"
+                loading="lazy"
               />
               <div className="project-overlay">
                 <i className={`${featuredProject.icon} project-icon`}></i>
               </div>
             </div>
             <div className="featured-project-content">
-              <h3 className="project-title">{featuredProject.title}</h3>
+              <h2 className="project-title">{featuredProject.title}</h2>
               <p className="project-description">{featuredProject.description}</p>
               <div className="project-tech">
                 {featuredProject.tech.map((t) => (
@@ -124,7 +130,7 @@ export default function Projects() {
                 <ProjectLink project={featuredProject} />
               </div>
             </div>
-          </div>
+          </article>
         ) : null}
 
         <div className="projects-page-grid">
@@ -140,3 +146,4 @@ export default function Projects() {
     </>
   );
 }
+

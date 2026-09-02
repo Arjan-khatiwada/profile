@@ -49,19 +49,18 @@ export default function Contact() {
     <>
       <SEO
         title="Contact"
-        description="Get in touch with Arjan Khatiwada."
+        description="Get in touch with Arjan Khatiwada. Send a message or connect via email, phone, or social networks for full stack development projects and inquiries."
       />
       <div className="container contact-page">
         <div className="container pt-5 px-3 px-md-5">
           <div className="contact-page-inner">
             <div className="contact-intro text-center">
               <div className="eyebrow" style={{ justifyContent: 'center' }}>
-              GET IN TOUCH WITH ME
+                GET IN TOUCH WITH ME
               </div>
-              <h2 className="section-heading">Contact Me</h2>
+              <h1 className="section-heading">Contact Me</h1>
               <p className="contact-intro-text">
-              Have a question or want to work
-              together? Send me a message and I'll get back to you soon
+                Have a question or want to work together? Send me a message and I'll get back to you soon.
               </p>
             </div>
 
@@ -70,14 +69,14 @@ export default function Contact() {
                 <div className="contact-grid">
                   <section className="contact-form-panel">
                     <div className="contact-section-header">
-                      <span className="contact-section-label">Send a Message</span>
+                      <h2 className="contact-section-label">Send a Message</h2>
                       <span className="contact-section-rule" aria-hidden="true"></span>
                     </div>
 
                     <form className="contact-form" onSubmit={handleSubmit}>
                       <div className="form-group">
                         <label className="contact-field-label" htmlFor="name">
-                        Name
+                          Name
                         </label>
                         <input
                           className="form-control"
@@ -92,7 +91,7 @@ export default function Contact() {
                       </div>
                       <div className="form-group">
                         <label className="contact-field-label" htmlFor="email">
-                        Email
+                          Email
                         </label>
                         <input
                           className="form-control"
@@ -107,7 +106,7 @@ export default function Contact() {
                       </div>
                       <div className="form-group">
                         <label className="contact-field-label" htmlFor="message">
-                        Message
+                          Message
                         </label>
                         <textarea
                           className="form-control"
@@ -141,7 +140,7 @@ export default function Contact() {
                   <aside className="contact-side-panel">
                     <section className="contact-coordinates-panel">
                       <div className="contact-section-header">
-                        <span className="contact-section-label">Contact Details</span>
+                        <h2 className="contact-section-label">Contact Details</h2>
                         <span className="contact-section-rule" aria-hidden="true"></span>
                       </div>
 
@@ -168,7 +167,7 @@ export default function Contact() {
 
                     <section className="contact-external-panel">
                       <div className="contact-section-header">
-                        <span className="contact-section-label">Follow Me</span>
+                        <h2 className="contact-section-label">Follow Me</h2>
                         <span className="contact-section-rule" aria-hidden="true"></span>
                       </div>
                       <div className="contact-external-icons social-icons">
@@ -177,7 +176,7 @@ export default function Contact() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="contact-external-link contact-external-facebook"
-                          aria-label="Facebook"
+                          aria-label="Facebook Profile"
                         >
                           <i className="fab fa-facebook" aria-hidden="true"></i>
                         </a>
@@ -186,7 +185,7 @@ export default function Contact() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="contact-external-link contact-external-instagram"
-                          aria-label="Instagram"
+                          aria-label="Instagram Profile"
                         >
                           <i className="fab fa-instagram" aria-hidden="true"></i>
                         </a>
@@ -195,7 +194,7 @@ export default function Contact() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="contact-external-link contact-external-linkedin"
-                          aria-label="LinkedIn"
+                          aria-label="LinkedIn Profile"
                         >
                           <i className="fab fa-linkedin" aria-hidden="true"></i>
                         </a>
@@ -211,3 +210,4 @@ export default function Contact() {
     </>
   );
 }
+
